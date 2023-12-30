@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="unknown_error_occur">Unknown Error Occurred!!</string>
+
+
+    <string name="property_key_is_empty_or_not_found">Trying to get property \'key\' \"%s\", but the key is empty or not found.</string>
+    <string name="error_unexpected_message">Unexpected error occurred. We are working on it.</string>
+    <string name="error_io_unexpected_message">Oops! Something went wrong while fetching the local data. Please try again</string>
+    <string name="unsupported_data_type" translatable="false">Unsupported data type</string>
+</resources>

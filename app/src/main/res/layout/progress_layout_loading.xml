@@ -6,19 +6,19 @@
     android:background="#80000000">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="@dimen/dimen_112"
-        android:layout_height="@dimen/dimen_112"
+        android:layout_width="@dimen/_100sdp"
+        android:layout_height="@dimen/_100sdp"
         android:layout_gravity="center"
-        app:cardCornerRadius="@dimen/dimen_10"
-        app:cardElevation="@dimen/dimen_4"
+        app:cardCornerRadius="@dimen/_10sdp"
+        app:cardElevation="@dimen/_3sdp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <ProgressBar
-            android:layout_width="@dimen/dimen_56"
-            android:layout_height="@dimen/dimen_56"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:layout_gravity="center" />
 
     </androidx.cardview.widget.CardView>

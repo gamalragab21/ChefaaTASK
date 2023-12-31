@@ -1,7 +1,7 @@
 package net.gamal.chefea.festures.commics.data.repository.remote
 
-import net.gamal.chefea.android.common.domain.model.request.RemoteRequest
-import net.gamal.chefea.android.common.domain.repository.remote.ChefeaApiService
+import net.gamal.chefea.core.common.domain.model.request.RemoteRequest
+import net.gamal.chefea.core.common.domain.repository.remote.ChefeaApiService
 import net.gamal.chefea.festures.commics.data.models.dto.ComicsResponseDto
 import net.gamal.chefea.festures.commics.domain.repository.remote.IComicsImagesRemoteDs
 import javax.inject.Inject

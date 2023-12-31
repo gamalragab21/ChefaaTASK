@@ -2,5 +2,16 @@
     <string name="app_name">ChefaaTASK</string>
     <string name="retry">Retry</string>
     <string name="unknown_error_occur">Unknown Error Occurred!!</string>
+    <string name="no_caption">No Caption</string>
+    <string name="caption">Caption</string>
+    <string name="width">Width</string>
+    <string name="Height">Height</string>
+    <string name="save">Save</string>
+    <string name="comic_details">Comic Details</string>
+    <string name="comics_trending">Comics Trending</string>
+    <string name="required">Required</string>
+    <string name="comic_update_successfully">Comic Update Successfully…</string>
+    <string name="share">Share</string>
+    <string name="save_image">Save Image</string>
 
 </resources>

@@ -9,8 +9,7 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.SharedFlow
 import kotlinx.coroutines.launch
-
-internal abstract class AndroidBaseViewModel<S : ViewState>(private val app: Application) :
+ abstract class AndroidBaseViewModel<S : ViewState>(private val app: Application) :
     AndroidViewModel(app) {
 
     private val _viewState = MutableSharedFlow<S>()

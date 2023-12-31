@@ -4,29 +4,47 @@ import android.app.Application
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.lifecycle.HiltViewModel
 import net.gamal.chefaatask.core.android.helpers.viewModel.AndroidBaseViewModel
-import net.gamal.chefea.android.common.data.model.Resource
+import net.gamal.chefea.android.extentions.info
 import net.gamal.chefea.android.helpers.properties.ConfigurationKey
 import net.gamal.chefea.android.helpers.properties.ConfigurationUtil
+import net.gamal.chefea.core.common.data.model.Resource
 import net.gamal.chefea.festures.commics.data.models.ComicsRequest
-import net.gamal.chefea.festures.commics.domain.interactors.FetchComicsUC
+import net.gamal.chefea.festures.commics.domain.interactors.FetchLocalComicsUC
+import net.gamal.chefea.festures.commics.domain.interactors.FetchUserComicsUC
 import javax.inject.Inject
 
 @HiltViewModel
-internal class HomeComicsVM @Inject constructor(
+class HomeComicsVM @Inject constructor(
     context: Application,
-    private val getComicsUc: FetchComicsUC,
+    private val fetchRemoteComicsUC: FetchUserComicsUC,
+    private val fetchLocalComicsUC: FetchLocalComicsUC,
     private val configurationUtil: ConfigurationUtil
 ) : AndroidBaseViewModel<HomeComicsState>(context) {
 
-    fun getTransactionsByIndex() {
-        getComicsUc.invoke(viewModelScope, buildComicsRequest()) {
+    fun getUserComicsByIndex() {
+        fetchRemoteComicsUC.invoke(viewModelScope, buildComicsRequest()) {
+            info("getComicsByIndex: $it")
             when (it) {
                 is Resource.Failure -> produce(
                     HomeComicsState.Failure(it.exception)
                 )
 
                 is Resource.Progress -> produce(HomeComicsState.Loading(it.loading))
-                is Resource.Success -> HomeComicsState.AppendNewComicsList(it.model)
+                is Resource.Success -> produce(HomeComicsState.AppendNewComicsList(it.model))
+            }
+        }
+    }
+
+    private fun getLocalComicsByIndex() {
+        fetchLocalComicsUC.invoke(viewModelScope) {
+            info("getComicsByIndex: $it")
+            when (it) {
+                is Resource.Failure -> produce(
+                    HomeComicsState.Failure(it.exception)
+                )
+
+                is Resource.Progress -> produce(HomeComicsState.Loading(it.loading))
+                is Resource.Success -> produce(HomeComicsState.AppendNewComicsList(it.model))
             }
         }
     }

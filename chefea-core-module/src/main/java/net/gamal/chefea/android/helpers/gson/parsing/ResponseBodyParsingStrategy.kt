@@ -1,12 +1,12 @@
 package net.gamal.chefea.android.helpers.gson.parsing
 
 import com.google.gson.stream.JsonReader
-import net.gamal.chefea.android.common.data.consts.Constants.CODE
-import net.gamal.chefea.android.common.data.consts.Constants.ERRORS
-import net.gamal.chefea.android.common.data.consts.Constants.MESSAGE
-import net.gamal.chefea.android.common.data.model.exception.LeonException
+import net.gamal.chefea.core.common.data.consts.Constants.CODE
+import net.gamal.chefea.core.common.data.consts.Constants.ERRORS
+import net.gamal.chefea.core.common.data.consts.Constants.MESSAGE
 import net.gamal.chefea.android.extentions.jsonArrayToHashMap
 import net.gamal.chefea.android.helpers.gson.adapter.IJsonParsingStrategy
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 import org.json.JSONArray
 
 internal class ResponseBodyParsingStrategy : IJsonParsingStrategy<LeonException> {

@@ -22,8 +22,8 @@
                 android:id="@+id/btn_action"
                 style="@style/ImageButton"
                 android:layout_gravity="end|center"
-                android:layout_marginStart="@dimen/dimen_16"
-                android:layout_marginEnd="@dimen/dimen_16"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:layout_marginEnd="@dimen/_12sdp"
                 android:visibility="gone"
                 tools:src="@tools:sample/avatars" />
 

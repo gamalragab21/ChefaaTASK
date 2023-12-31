@@ -1,7 +1,7 @@
 package net.gamal.chefea.android.extentions
 
 import com.google.gson.GsonBuilder
-import net.gamal.chefea.android.common.data.model.exception.LeonException
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 import net.gamal.chefea.android.helpers.gson.adapter.LeonExceptionTypeAdapter
 import net.gamal.chefea.android.helpers.gson.parsing.JSONParsingStrategy
 import net.gamal.chefea.android.helpers.gson.serializer.client.LeonClientResponseValidationSerializer

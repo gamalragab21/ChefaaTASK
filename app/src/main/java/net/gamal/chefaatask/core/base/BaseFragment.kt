@@ -5,8 +5,8 @@ import android.view.View
 import androidx.viewbinding.ViewBinding
 import net.gamal.chefaatask.core.android.extension.castToActivity
 import net.gamal.chefaatask.core.android.helpers.viewModel.CurrentAction
-import net.gamal.chefea.android.common.data.model.exception.LeonException
 import net.gamal.chefea.android.extentions.debug
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 
 abstract class BaseFragment<B : ViewBinding> : BaseViewBinding<B>() {
 

@@ -1,30 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
     <!--  For Default  -->
-    <color name="colorPrimary">#28B3B2</color>
+    <color name="colorPrimary">#0C0C0C</color>
     <color name="colorPrimaryVariant">#FFFFFFFF</color>
     <color name="colorOnPrimary">#F6F5FA</color>
 
-    <color name="colorTextDefault">#a5a5a5</color>
-    <color name="colorBlackHalfOpacity">#80000000</color>
+    <color name="colorPrimaryDark">#0C0C0C</color>
 
+    <color name="disabled">#E4E4E4</color>
+    <color name="details_screen">#EFEFEF</color>
+    <color name="greyColor">#a5a5a5</color>
+    <color name="greyColor_black">#8F8D8D</color>
+    <color name="grey_border">#EFEFEF</color>
+    <color name="btn_dis_enable">#504F4F</color>
+    <color name="colorBlackHalfOpacity">#80000000</color>
     <color name="colorCancel">#db1233</color>
-    <color name="colorProgressBar">#fefeff</color>
+    <color name="red_dark">#AB0924</color>
+    <color name="transpernt">#00FFFFFF</color>
+    <color name="blue_facebook">#1877F2</color>
+
+    <color name="gray_background">#ebebeb</color>
+    <color name="gray_background2">#D9D9D9</color>
 
     <!--  For Network  -->
     <color name="colorNetworkConnected">#00C853</color>
     <color name="colorNetworkWaiting">#FDD835</color>
     <color name="colorNetworkLost">#FF1744</color>
-
-    <!--  For App  -->
-    <color name="colorTransactionSuccess">#4bae4f</color>
-    <color name="colorTransactionText">#3f3f3f</color>
-    <color name="colorTransactionBackground">#F8F8F8</color>
-    <color name="colorTextViewNormal">#212122</color>
-    <color name="colorAction">#382b80</color>
-    <color name="colorButtonNormal">#28B3B2</color>
-    <color name="colorTextInputHint">#f6f5fa</color>
-    <color name="colorTextViewHint">#c8c8cc</color>
-    <color name="colorButtonNumPad">#f6f5fa</color>
-    <color name="colorButtonDisabled">#C8C8CC</color>
 </resources>

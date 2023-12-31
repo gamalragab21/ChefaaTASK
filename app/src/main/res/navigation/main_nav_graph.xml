@@ -9,5 +9,18 @@
         android:id="@+id/homeFragment"
         tools:layout="@layout/fragment_home"
         android:name="net.gamal.chefaatask.ui.fragments.home.HomeFragment"
-        android:label="HomeFragment" />
+        android:label="HomeFragment" >
+        <action
+            android:id="@+id/action_homeFragment_to_detailsComicsFragment"
+            app:destination="@id/detailsComicsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsComicsFragment"
+        tools:layout="@layout/fragment_details"
+        android:name="net.gamal.chefaatask.ui.fragments.details.DetailsComicsFragment"
+        android:label="DetailsComicsFragment" >
+        <argument
+            android:name="comicItem"
+            app:argType="net.gamal.chefea.festures.commics.domain.models.ComicsItem" />
+    </fragment>
 </navigation>

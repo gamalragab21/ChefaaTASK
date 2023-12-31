@@ -5,7 +5,13 @@ import com.google.gson.annotations.SerializedName
 
 internal data class ThumbnailDto(
     @SerializedName("extension")
-    var extension: String,
+    private var extension: String,
     @SerializedName("path")
-    var path: String
-)
+    private var path: String
+) {
+    fun getCompletePath() = "$path.$extension".replaceHttpWithHttps()
+
+    private fun String.replaceHttpWithHttps(): String =
+        if (startsWith("http://")) "https${substring(4)}"
+        else this
+}

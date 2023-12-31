@@ -1,6 +1,6 @@
 package net.gamal.chefea.festures.commics.data.mapper
 
-import net.gamal.chefea.android.common.data.mapper.Mapper
+import net.gamal.chefea.core.common.data.mapper.Mapper
 import net.gamal.chefea.festures.commics.data.models.dto.ComicsDataDto
 import net.gamal.chefea.festures.commics.domain.models.ComicsData
 

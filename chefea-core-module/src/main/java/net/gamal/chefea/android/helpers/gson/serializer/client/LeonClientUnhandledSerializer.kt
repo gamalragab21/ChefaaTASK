@@ -4,10 +4,10 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
-import net.gamal.chefea.android.common.data.consts.Constants.HTTP_ERROR_CODE
-import net.gamal.chefea.android.common.data.consts.Constants.MESSAGE
-import net.gamal.chefea.android.common.data.consts.Constants.SUBTYPE
-import net.gamal.chefea.android.common.data.model.exception.LeonException
+import net.gamal.chefea.core.common.data.consts.Constants.HTTP_ERROR_CODE
+import net.gamal.chefea.core.common.data.consts.Constants.MESSAGE
+import net.gamal.chefea.core.common.data.consts.Constants.SUBTYPE
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 import java.lang.reflect.Type
 
 internal class LeonClientUnhandledSerializer : JsonSerializer<LeonException.Client.Unhandled> {

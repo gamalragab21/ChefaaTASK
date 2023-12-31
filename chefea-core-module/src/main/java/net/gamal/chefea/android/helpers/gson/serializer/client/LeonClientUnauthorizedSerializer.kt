@@ -4,8 +4,8 @@ import com.google.gson.JsonElement
 import com.google.gson.JsonObject
 import com.google.gson.JsonSerializationContext
 import com.google.gson.JsonSerializer
-import net.gamal.chefea.android.common.data.consts.Constants.SUBTYPE
-import net.gamal.chefea.android.common.data.model.exception.LeonException
+import net.gamal.chefea.core.common.data.consts.Constants.SUBTYPE
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 import java.lang.reflect.Type
 
 internal class LeonClientUnauthorizedSerializer :

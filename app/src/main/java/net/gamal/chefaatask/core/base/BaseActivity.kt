@@ -11,7 +11,7 @@ import net.gamal.chefaatask.core.android.extension.currentNavigationFragments
 import net.gamal.chefaatask.core.android.extension.hideKeyboard
 import net.gamal.chefaatask.core.android.extension.showToastAsShort
 import net.gamal.chefaatask.core.android.helpers.viewModel.CurrentAction
-import net.gamal.chefea.android.common.data.model.exception.LeonException
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 
 abstract class BaseActivity<B : ViewBinding> : AppCompatActivity() {
 

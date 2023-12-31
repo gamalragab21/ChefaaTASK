@@ -6,12 +6,12 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import net.gamal.chefaa.core.BuildConfig
-import net.gamal.chefea.android.common.data.repository.remote.converter.ResponseBodyConverter
-import net.gamal.chefea.android.common.data.repository.remote.factory.LeonCallAdapterFactory
-import net.gamal.chefea.android.common.domain.repository.remote.ChefeaApiService
 import net.gamal.chefea.android.extentions.warning
 import net.gamal.chefea.android.helpers.properties.ConfigurationKey
 import net.gamal.chefea.android.helpers.properties.ConfigurationUtil
+import net.gamal.chefea.core.common.data.repository.remote.converter.ResponseBodyConverter
+import net.gamal.chefea.core.common.data.repository.remote.factory.LeonCallAdapterFactory
+import net.gamal.chefea.core.common.domain.repository.remote.ChefeaApiService
 import okhttp3.ConnectionPool
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor

@@ -4,7 +4,7 @@ import com.google.gson.TypeAdapter
 import com.google.gson.stream.JsonReader
 import com.google.gson.stream.JsonToken
 import com.google.gson.stream.JsonWriter
-import net.gamal.chefea.android.common.data.model.exception.LeonException
+import net.gamal.chefea.core.common.data.model.exception.LeonException
 
 internal class LeonExceptionTypeAdapter(private val parsingStrategy: IJsonParsingStrategy<LeonException>) :
     TypeAdapter<LeonException>() {

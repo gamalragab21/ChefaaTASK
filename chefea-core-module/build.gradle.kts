@@ -43,33 +43,7 @@ android {
 }
 
 dependencies {
-    val truthVersion = "1.1.5"
-    val turbineVersion = "1.0.0"
-    val nhaarmanMockito = "2.2.0"
-    val coroutinesTest = "1.7.3"
 
-    // Unit Testing
-    testImplementation("com.google.truth:truth:$truthVersion")
-    testImplementation("org.mockito.kotlin:mockito-kotlin:5.1.0")
-    testImplementation("app.cash.turbine:turbine:$turbineVersion")
-    testImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:$nhaarmanMockito")
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTest") {
-        exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-debug")
-    }
-
-    // Instrumented Testing
-    androidTestImplementation("androidx.test.ext:junit:1.1.5")
-    androidTestImplementation("org.mockito:mockito-android:5.7.0")
-    androidTestImplementation("com.google.truth:truth:$truthVersion")
-    androidTestImplementation("app.cash.turbine:turbine:$turbineVersion")
-    androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
-
-    androidTestImplementation("com.nhaarman.mockitokotlin2:mockito-kotlin:$nhaarmanMockito")
-    androidTestImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTest") {
-        exclude(group = "org.jetbrains.kotlinx", module = "kotlinx-coroutines-debug")
-    }
-
-    // ---------------------------------------------------------------------------------------------
 
     // Android
     implementation("androidx.appcompat:appcompat:1.6.1")
@@ -85,9 +59,6 @@ dependencies {
     // Work Manager for (Kotlin + coroutines)
     implementation("androidx.work:work-runtime-ktx:2.9.0")
 
-    // Android Advertising ID (AAID)
-    implementation("com.google.android.gms:play-services-ads-identifier:18.0.1")
-
     // Google Gson
     implementation("com.google.code.gson:gson:2.10.1")
 
@@ -101,6 +72,17 @@ dependencies {
     val hiltVersion = "2.48.1"
     implementation("com.google.dagger:hilt-android:$hiltVersion")
     kapt("com.google.dagger:hilt-android-compiler:$hiltVersion")
+
+    val room_version = "2.6.1"
+
+    implementation("androidx.room:room-runtime:$room_version")
+    annotationProcessor("androidx.room:room-compiler:$room_version")
+    kapt("androidx.room:room-compiler:$room_version")
+
+    // optional - Kotlin Extensions and Coroutines support for Room
+    implementation("androidx.room:room-ktx:$room_version")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
+
 
     // Inject WorkManager with Hilt
     implementation("androidx.hilt:hilt-work:1.1.0")

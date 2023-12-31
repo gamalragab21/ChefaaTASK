@@ -1,6 +1,6 @@
 package net.gamal.chefea.festures.commics.data.mapper
 
-import net.gamal.chefea.android.common.data.mapper.Mapper
+import net.gamal.chefea.core.common.data.mapper.Mapper
 import net.gamal.chefea.festures.commics.data.models.dto.ComicsItemDto
 import net.gamal.chefea.festures.commics.data.models.entity.ComicsItemEntity
 import net.gamal.chefea.festures.commics.domain.models.ComicsItem
@@ -18,5 +18,9 @@ internal object ComicsItemMapper : Mapper<ComicsItemDto, ComicsItem, ComicsItemE
             ThumbnailMapper.domainToEntity(domain.thumbnail),
             domain.title
         )
+    }
+
+    override fun entityToDomain(entity: ComicsItemEntity): ComicsItem {
+        return ComicsItem(entity.id, ThumbnailMapper.entityToDomain(entity.thumbnail), entity.title)
     }
 }

@@ -6,21 +6,20 @@ ChefaaTASK is an offline-first Android app that allows users to view and manage 
 
  # Screenshots
 
-<img src="![Screenshot_20240101_134046_Permission controller](https://github.com/gamalragab21/ShopApp/assets/67482991/ba696dc7-c1b2-4144-80f7-6ed494a5ebdc)
+<img src="https://github.com/gamalragab21/ShopApp/assets/67482991/ba696dc7-c1b2-4144-80f7-6ed494a5ebdc
 " width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
-<img src="" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/4762155a-ccf5-4328-b669-b0da79507133" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/98f1e2ad-8df4-4135-b6f5-02e7b3755d34" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/487a4252-e955-4146-b1ed-1616476ab544" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/ceb403cb-5eef-45c3-9796-fdbe73097c16" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/79cd3d17-d193-46fa-81cf-d0dcd4d0a14a" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/15489164-d809-4548-905a-c9736a49d5de" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/43156eac-93c4-4951-aabc-4d0b064bf490" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/954f7c70-7858-4d14-b071-c0f22879f32f" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/bf3d6c68-4e79-4037-b02b-e628725c2819" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/5884507c-9397-4c43-9e77-802fd1ecbdc0" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/5224fc3a-be16-4ffa-9645-541c489d46f2" width="200">&nbsp;
+<img src="https://github.com/gamalragab21/ChefaaTASK/assets/67482991/fefe7adb-f093-42df-9118-99e1a6e6d41c" width="200">&nbsp;
 
 ## Features
 

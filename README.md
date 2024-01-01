@@ -1,5 +1,49 @@
 # ChefaaTASK Android App
 
+## Technical Skills Utilized
+
+### Programming Language
+- **Kotlin:** The entire app is developed using the Kotlin programming language.
+
+### User Interface
+- **XML:** XML is used for defining the layouts and views in the Android user interface.
+
+### Concurrency
+- **Coroutines:** Utilized for managing asynchronous tasks and improving code readability.
+
+### Reactive Programming
+- **Flow:** Implemented to handle asynchronous data streams and manage UI updates.
+
+### Image Loading
+- **Fresco (Figitalk Signature):** Used for efficient image loading, including support for Figitalk Signature.
+
+### Data Encoding
+- **Base64:** Employed for encoding and decoding binary data, especially for image-related operations.
+
+### Networking
+- **Retrofit:** Utilized for making network requests to the Marvel and TinyPNG APIs.
+
+### Dependency Injection
+- **Dagger Hilt:** Implemented for dependency injection, promoting modular and scalable code.
+
+### Local Database
+- **Room DB:** Used for local caching of images and their captions, adhering to clean architecture principles.
+
+### Background Processing
+- **Job Scheduler:** Employed for background tasks such as image uploading with notification indicators.
+
+### Services and Broadcasts
+- **Services and Broadcast Receivers:** Utilized for handling background tasks and communication between components.
+
+### Architecture
+- **Clean Architecture:** Adopted to create a modular, maintainable, and scalable codebase.
+
+### Navigation
+- **Navigation Components:** Integrated for navigation between different screens and ensuring a smooth user experience.
+
+### Design Patterns
+- **MVI (Model-View-Intent):** Followed to structure and manage UI-related code.
+
 ## Brief
 
 ChefaaTASK is an offline-first Android app that allows users to view and manage a list of images fetched from the Marvel REST API. Users can modify captions for each image, locally add new images from the device gallery, and resize images while maintaining their aspect ratios.

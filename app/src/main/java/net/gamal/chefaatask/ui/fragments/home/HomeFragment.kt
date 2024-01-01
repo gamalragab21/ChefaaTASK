@@ -43,6 +43,12 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             )
             else showPopupMenu(view, comicsItem)
         }
+
+        binding.addingComic.setOnClickListener {
+            navigateSafe(
+                HomeFragmentDirections.actionHomeFragmentToDetailsComicsFragment(null)
+            )
+        }
     }
 
     private fun showPopupMenu(view: View, comicsItem: ComicsItem) {

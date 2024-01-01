@@ -11,4 +11,5 @@ sealed class DetailsComicsState : ViewState {
 
     data class Validation(val inputFieldError: InputFieldError) : DetailsComicsState()
     data class LoadComicOnScreen(val model: ComicsItem) : DetailsComicsState()
+    data object TaskAreEnqueuedSuccess : DetailsComicsState()
 }

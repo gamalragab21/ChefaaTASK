@@ -5,7 +5,7 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import net.gamal.chefaatask.core.android.helpers.file.ImageFileUtils
+import net.gamal.chefea.android.helpers.file.ImageFileUtils
 import net.gamal.chefea.core.common.data.repository.local.room.ChefeaDatabase
 import net.gamal.chefea.core.common.domain.repository.remote.ChefeaApiService
 import net.gamal.chefea.festures.resize.data.repository.ResizeRepository

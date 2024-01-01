@@ -30,7 +30,7 @@ internal fun Context.registerReceiverExported(receiver: BroadcastReceiver, filte
 }
 
 @SuppressLint("UnspecifiedRegisterReceiverFlag")
-internal fun Context.registerReceiverNotExported(
+fun Context.registerReceiverNotExported(
     receiver: BroadcastReceiver, filter: IntentFilter
 ) {
     if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU)

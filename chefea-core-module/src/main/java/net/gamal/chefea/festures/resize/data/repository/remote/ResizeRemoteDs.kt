@@ -1,5 +1,6 @@
 package net.gamal.chefea.festures.resize.data.repository.remote
 
+import net.gamal.chefea.android.extentions.debug
 import net.gamal.chefea.core.common.data.consts.Constants
 import net.gamal.chefea.core.common.domain.model.request.RemoteRequest
 import net.gamal.chefea.core.common.domain.repository.remote.ChefeaApiService
@@ -14,6 +15,7 @@ internal class ResizeRemoteDs @Inject constructor(private val provider: ChefeaAp
     override suspend fun shrinkImageLocalFile(remoteRequest: RemoteRequest): TinfyResponseDto {
         val imageFile = remoteRequest.requestBody[Constants.IMAGE_FILE] as RequestBody
         val authorization = remoteRequest.requestHeaders[Constants.AUTHORIZATION] as String
+        debug("shrinkImageLocalFile: imageFile=$imageFile ")
         return provider.shrinkLocalFile(file = imageFile, authorization = authorization)
     }
 

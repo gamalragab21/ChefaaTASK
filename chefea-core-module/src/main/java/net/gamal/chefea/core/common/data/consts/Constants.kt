@@ -1,6 +1,7 @@
 package net.gamal.chefea.core.common.data.consts
 
 internal object Constants {
+    const val RESIZE_REQUEST: String="resize_request"
     const val URL: String = "url"
     const val SOURCE: String = "source"
     const val RESIZE: String = "resize"

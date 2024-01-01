@@ -38,5 +38,12 @@
                 android:resource="@xml/file_paths" />
         </provider>
 
+        <service
+            android:name=".core.workers.resizeImage.domain.ResizeImageService"
+            android:exported="false"
+            android:foregroundServiceType="dataSync|location|mediaPlayback"
+            android:stopWithTask="true"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
     </application>
 </manifest>

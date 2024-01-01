@@ -2,11 +2,14 @@ package net.gamal.chefea.festures.commics.domain.models
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.graphics.drawable.Drawable
+import android.os.Parcel
 import android.os.Parcelable
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.target.CustomTarget
 import com.bumptech.glide.request.transition.Transition
+import kotlinx.parcelize.Parceler
 import kotlinx.parcelize.Parcelize
 import java.io.ByteArrayOutputStream
 import kotlin.coroutines.resume
@@ -16,6 +19,9 @@ import kotlin.coroutines.suspendCoroutine
 data class Thumbnail(
     var path: String, var imageBitmap: Bitmap? = null
 ) : Parcelable {
+
+    fun inInitialState() = path.isEmpty() && imageBitmap == null
+
 
     suspend fun setImageAsBitmap(path: String, context: Context) =
         suspendCoroutine { continuation ->
@@ -43,4 +49,25 @@ data class Thumbnail(
         "jpg" -> Bitmap.CompressFormat.JPEG
         else -> Bitmap.CompressFormat.PNG
     }
+
+    companion object : Parceler<Thumbnail> {
+        override fun create(parcel: Parcel): Thumbnail {
+            val path = parcel.readString()!!
+            val byteArray = parcel.createByteArray()
+
+            // Handle null Bitmap:
+            val imageBitmap = if (byteArray != null) {
+                BitmapFactory.decodeByteArray(byteArray, 0, byteArray.size)
+            } else {
+                null
+            }
+
+            return Thumbnail(path, imageBitmap)
+        }
+
+        override fun Thumbnail.write(parcel: Parcel, flags: Int) {
+            // Parceler will handle serialization automatically
+        }
+    }
+
 }

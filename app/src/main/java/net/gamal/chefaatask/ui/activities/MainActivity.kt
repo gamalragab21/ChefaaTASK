@@ -1,6 +1,9 @@
 package net.gamal.chefaatask.ui.activities
 
+import android.os.Build
 import android.os.Bundle
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination
@@ -10,6 +13,7 @@ import dagger.hilt.android.AndroidEntryPoint
 import net.gamal.chefaatask.R
 import net.gamal.chefaatask.core.android.extension.onBackClicked
 import net.gamal.chefaatask.core.android.extension.show
+import net.gamal.chefaatask.core.android.extension.showToastAsLong
 import net.gamal.chefaatask.core.android.helpers.viewModel.CurrentAction
 import net.gamal.chefaatask.core.base.BaseActivity
 import net.gamal.chefaatask.databinding.ActivityMainBinding
@@ -20,6 +24,14 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
 
     private lateinit var navController: NavController
 
+
+    private val pushNotificationPermissionLauncher = registerForActivityResult(
+        ActivityResultContracts.RequestPermission()
+    ) { granted ->
+        if (!granted) showToastAsLong("Please accept notification permission to can see notification")
+    }
+
+    @RequiresApi(Build.VERSION_CODES.TIRAMISU)
     override fun onActivityReady(savedInstanceState: Bundle?) {
 
         onBackClicked {
@@ -32,6 +44,8 @@ class MainActivity : BaseActivity<ActivityMainBinding>(),
         navHostFragment.navController.graph = navGraph
         navController = navHostFragment.navController
         navController.addOnDestinationChangedListener(this)
+
+        pushNotificationPermissionLauncher.launch(android.Manifest.permission.POST_NOTIFICATIONS)
     }
 
     override fun onSupportNavigateUp(): Boolean =

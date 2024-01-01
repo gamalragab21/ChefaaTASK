@@ -12,6 +12,7 @@ enum class InputFiledType(val title: String) {
     TRANSACTION_TYPE("transactionType"),
     PHONE("phone"),
     WIDTH("width"),
+    IMAGE("image"),
     HEIGHT("height"),
     OTP("otp"),
     LOCATION("location"),

@@ -1,8 +1,11 @@
-package net.gamal.chefaatask.core.android.helpers.file
+package net.gamal.chefea.android.helpers.file
 
 import android.content.Context
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Environment
+import android.provider.MediaStore
+import android.util.Log
 import okhttp3.ResponseBody
 import java.io.File
 import java.io.FileOutputStream
@@ -13,6 +16,9 @@ import java.util.Locale
 import javax.inject.Inject
 
 
+fun File.deleteIfExists(){
+    if (exists()) delete()
+}
 class ImageFileUtils @Inject constructor(private val context: Context) {
 
     private val timeStamp by lazy {
@@ -59,5 +65,29 @@ class ImageFileUtils @Inject constructor(private val context: Context) {
         outputStream.close()
         inputStream.close()
         return outputFile
+    }
+
+    fun createFileFromUri(context: Context, uri: Uri): File {
+        val filePath = getRealPathFromUri(context, uri)!!
+        return File(filePath)
+    }
+
+    private fun getRealPathFromUri(context: Context, uri: Uri): String? {
+        var realPath: String? = null
+
+        // Using the ContentResolver to get the real path from the URI
+        val projection = arrayOf(MediaStore.Images.Media.DATA)
+        try {
+            val cursor = context.contentResolver.query(uri, projection, null, null, null)
+            if (cursor != null) {
+                val column_index = cursor.getColumnIndexOrThrow(MediaStore.Images.Media.DATA)
+                cursor.moveToFirst()
+                realPath = cursor.getString(column_index)
+                cursor.close()
+            }
+        } catch (e: Exception) {
+            Log.e("FileUtil", "Error getting real path from URI", e)
+        }
+        return realPath
     }
 }

@@ -1,7 +1,7 @@
 package net.gamal.chefea.festures.resize.data.repository
 
 import android.content.Context
-import net.gamal.chefaatask.core.android.helpers.file.ImageFileUtils
+import net.gamal.chefea.android.helpers.file.ImageFileUtils
 import net.gamal.chefea.core.common.domain.model.request.RemoteRequest
 import net.gamal.chefea.festures.commics.data.mapper.ComicsItemMapper
 import net.gamal.chefea.festures.commics.domain.models.ComicsItem
@@ -19,8 +19,12 @@ internal class ResizeRepository @Inject constructor(
     private val localDs: IResizeLocalDs,
     private val imageFileUtils: ImageFileUtils
 ) : IResizeRepository {
-    override suspend fun shrinkImageFile(remoteRequest: RemoteRequest): TinfyResponse {
-        val result = remoteDs.shrinkImageUrlFile(remoteRequest)
+    override suspend fun shrinkImageFile(
+        comicsItem: ComicsItem, remoteRequest: RemoteRequest
+    ): TinfyResponse {
+        val result =
+            if (comicsItem.thumbnail.path.isNotEmpty()) remoteDs.shrinkImageUrlFile(remoteRequest)
+            else remoteDs.shrinkImageLocalFile(remoteRequest)
         return TinfyResponseMapper.dtoToDomain(result)
     }
 
@@ -31,7 +35,8 @@ internal class ResizeRepository @Inject constructor(
 
     override suspend fun updateCurrentComic(comicsItem: ComicsItem, domain: File) {
         comicsItem.thumbnail.apply {
-            setImageAsBitmap(domain.path,context)
+            path = domain.absolutePath
+            setImageAsBitmap(path, context)
         }
         val entity = ComicsItemMapper.domainToEntity(comicsItem)
         localDs.updateComic(entity)

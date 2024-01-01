@@ -12,8 +12,7 @@ import net.gamal.chefea.android.helpers.gson.serializer.local.LeonLocalRequestVa
 import net.gamal.chefea.android.helpers.gson.serializer.network.LeonNetworkHandledSerializer
 import net.gamal.chefea.android.helpers.gson.serializer.network.LeonNetworkRetrialSerializer
 import net.gamal.chefea.android.helpers.gson.serializer.server.LeonServerInternalSerializer
-
-internal fun LeonException.toJsonLeonException(): String {
+ fun LeonException.toJsonLeonException(): String {
     val gson = GsonBuilder()
         // NetworkException
         .registerTypeAdapter(

@@ -1,6 +1,7 @@
 package net.gamal.chefea.festures.resize.data.model
 
 import net.gamal.chefea.android.extentions.createRequestBody
+import net.gamal.chefea.android.helpers.file.deleteIfExists
 import net.gamal.chefea.core.common.data.consts.Constants
 import net.gamal.chefea.core.common.domain.model.request.IRequestValidation
 import net.gamal.chefea.core.common.domain.model.request.RemoteRequest
@@ -12,10 +13,8 @@ import java.util.Base64
 
 
 data class ResizeRequest(
-    private val apiKey: String,
-    private val imageFile: File,
-    private val height: Float,
-    private val width: Float,
+    val apiKey: String, val imageFilePath: String,
+    val height: Float, val width: Float,
     val comicsItem: ComicsItem
 ) : IRequestValidation {
 
@@ -27,7 +26,7 @@ data class ResizeRequest(
                 Constants.AUTHORIZATION to getAuthorizationApiKey(apiKey),
             ),
             requestBody = hashMapOf(
-                Constants.IMAGE_FILE to imageFile.createRequestBody(),
+                Constants.IMAGE_FILE to File(imageFilePath).createRequestBody(),
                 Constants.IMAGE_FILE_URL to comicsItem.thumbnail.path,
                 Constants.HEIGHT to height,
                 Constants.WIDTH to width
@@ -41,7 +40,11 @@ data class ResizeRequest(
     }
 
     fun clear() {
-        imageFile.delete()
+        try {
+            File(imageFilePath).deleteIfExists()
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     override fun getRequestContracts(): HashMap<RequestContractType, HashMap<String, Boolean>> {
@@ -50,9 +53,9 @@ data class ResizeRequest(
                 Constants.AUTHORIZATION to true,
             ),
             RequestContractType.BODY to hashMapOf(
-                Constants.IMAGE_FILE to true,
+                Constants.IMAGE_FILE to false,
                 Constants.WIDTH to true,
-                Constants.IMAGE_FILE_URL to true,
+                Constants.IMAGE_FILE_URL to false,
                 Constants.HEIGHT to true,
                 Constants.IMAGE_OUTPUT to false
             )

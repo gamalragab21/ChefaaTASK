@@ -21,7 +21,6 @@
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/et_search_caption"
             android:layout_width="match_parent"
-            android:text="@string/no_caption"
             android:layout_height="match_parent"
             android:inputType="text" />
 

@@ -114,6 +114,7 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
 
     override fun onDestroyView() {
         comicsAdapter.comicsItems = emptyList()
+        binding.etSearchCaption.setText("")
         super.onDestroyView()
     }
 

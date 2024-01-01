@@ -3,6 +3,7 @@ package net.gamal.chefaatask.ui.fragments.home
 import android.view.MenuItem
 import android.view.View
 import androidx.appcompat.widget.PopupMenu
+import androidx.core.widget.doOnTextChanged
 import androidx.fragment.app.viewModels
 import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.StaggeredGridLayoutManager
@@ -48,6 +49,10 @@ class HomeFragment : BaseFragment<FragmentHomeBinding>() {
             navigateSafe(
                 HomeFragmentDirections.actionHomeFragmentToDetailsComicsFragment(null)
             )
+        }
+
+        binding.etSearchCaption.doOnTextChanged { text, start, before, count ->
+            comicsAdapter.searchByTitle(text.toString())
         }
     }
 

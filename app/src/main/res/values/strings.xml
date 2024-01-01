@@ -14,5 +14,6 @@
     <string name="share">Share</string>
     <string name="save_image">Save Image</string>
     <string name="add_comic">Add Comic</string>
+    <string name="enter_a_capture">Enter a capture</string>
 
 </resources>

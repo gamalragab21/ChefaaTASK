@@ -16,6 +16,7 @@ class ComicsAdapter @Inject constructor(
 ) : RecyclerView.Adapter<ComicsAdapter.ComicsVH>() {
 
     private var onItemClickListener: ((ComicsItem, View?) -> Unit)? = null
+    private var originalComicsItems: List<ComicsItem> = emptyList()
 
     fun setOnItemClickListener(listener: (ComicsItem, View?) -> Unit) {
         onItemClickListener = listener
@@ -40,7 +41,11 @@ class ComicsAdapter @Inject constructor(
 
     var comicsItems: List<ComicsItem>
         get() = differ.currentList
-        set(value) = differ.submitList(value)
+        set(value) {
+            originalComicsItems = value
+            performSearch(searchQuery)
+        }
+
 
 
     private val differCallBack = object : DiffUtil.ItemCallback<ComicsItem>() {
@@ -66,5 +71,20 @@ class ComicsAdapter @Inject constructor(
     override fun onBindViewHolder(holder: ComicsVH, position: Int) {
         val comicsItem = comicsItems[position]
         holder.bindData(comicsItem)
+    }
+
+    private var searchQuery: String = ""
+
+    fun searchByTitle(query: String) {
+        searchQuery = query
+        performSearch(query)
+    }
+    private fun performSearch(query: String) {
+        val filteredList = if (query.isEmpty()) {
+            originalComicsItems
+        } else {
+            originalComicsItems.filter { it.title.contains(query, true) }
+        }
+        differ.submitList(filteredList)
     }
 }

@@ -46,7 +46,7 @@ class DetailsComicsFragment : BaseFragment<FragmentDetailsBinding>() {
 
     override fun onFragmentReady() {
         setToolBarConfigs(
-            if (args.comicItem == null) R.string.comic_details else R.string.add_comic, true
+            if (args.comicItem !=null) R.string.comic_details else R.string.add_comic, true
         )
         onBackClicked { findNavController().popBackStack() }
         args.comicItem?.let { loadData(it) }
